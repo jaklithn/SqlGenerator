@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SqlGenerator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TableName</Value>
+    </Setting>
+    <Setting Name="FilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Temp\MyExcelFile.xlsx</Value>
+    </Setting>
+    <Setting Name="SheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Sheet1</Value>
+    </Setting>
+    <Setting Name="ConnectionKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Carema</Value>
+    </Setting>
+    <Setting Name="FileType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Excel</Value>
+    </Setting>
+    <Setting Name="Delimiter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Semicolon</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=localhost;Initial Catalog=Northwind;Trusted_Connection=True;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
