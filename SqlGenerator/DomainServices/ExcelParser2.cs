@@ -9,11 +9,8 @@
 //namespace SqlGenerator.DomainServices
 //{
 //	/// <summary>
-//	/// Excel parsing in this class is performed by using a common shareware Lib.
-//	/// It is MUCH faster than using Microsoft Excel automation!!
-//	/// http://koogra.sourceforge.net/
-//	/// Net.SourceForge.Koogra.dll, Net.SourceForge.Koogra.xml, Ionic.Utils.Zip.dll
-//	/// Current version is released 2010-03-24
+//	/// Excel parsing in this class is performed by using a common shareware Lib found here: http://koogra.sourceforge.net/
+//	/// The files used are: Net.SourceForge.Koogra.dll, Net.SourceForge.Koogra.xml, Ionic.Utils.Zip.dll
 //	/// </summary>
 //	public static class ExcelParser2
 //	{

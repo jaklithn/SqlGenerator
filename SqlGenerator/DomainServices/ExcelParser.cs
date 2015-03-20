@@ -10,11 +10,9 @@ using SqlGenerator.Entities;
 namespace SqlGenerator.DomainServices
 {
 	/// <summary>
-	/// Excel parsing in this class is performed by using a common shareware Lib.
+	/// Excel parsing in this class is performed by using a common shareware Lib found on:
+	/// https://github.com/ExcelDataReader/ExcelDataReader
 	/// It is MUCH faster than using Microsoft Excel automation!!
-	/// http://exceldatareader.codeplex.com/
-	/// Excel.dll, Excel.pdb, ICSharpCode.SharpZipLib.dll
-	/// Current version is taken from downloaded source 2013-01-29
 	/// </summary>
 	public static class ExcelParser
 	{

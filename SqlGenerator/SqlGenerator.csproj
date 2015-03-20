@@ -61,12 +61,17 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Excel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\Excel.dll</HintPath>
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.TextEditor">
-      <HintPath>Lib\ICSharpCode.TextEditor.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TextEditor, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ICSharpCode.TextEditor.3.2.1.6466\lib\Net20\ICSharpCode.TextEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -129,6 +134,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\ExcelToStringFormatter.Entities.ColumnItem.datasource" />
     <EmbeddedResource Include="Resources\SQL-Mode.xshd">
       <SubType>Designer</SubType>
@@ -164,15 +170,6 @@
     <EmbeddedResource Include="Resources\SyntaxModes.xml" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Lib\Excel.dll" />
-    <Content Include="Lib\Excel.pdb" />
-    <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
-    <Content Include="Lib\ICSharpCode.TextEditor.dll" />
-    <Content Include="Lib\Ionic.Utils.Zip.dll" />
-    <Content Include="Lib\Net.SourceForge.Koogra.dll" />
-    <Content Include="Lib\Net.SourceForge.Koogra.XML" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
