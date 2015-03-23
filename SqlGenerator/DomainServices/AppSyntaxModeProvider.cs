@@ -22,10 +22,8 @@ namespace SqlGenerator.DomainServices
 		{
 			var assembly = Assembly.GetExecutingAssembly();
 			var resourcePath = string.Format("{0}.Resources.{1}", assembly.GetName().Name, syntaxMode.FileName);
-			using (var stream = assembly.GetManifestResourceStream(resourcePath))
-			{
-				return stream == null ? null : new XmlTextReader(stream);
-			}
+			var stream = assembly.GetManifestResourceStream(resourcePath);
+			return stream == null ? null : new XmlTextReader(stream);
 		}
 
 		public void UpdateSyntaxModeList()
