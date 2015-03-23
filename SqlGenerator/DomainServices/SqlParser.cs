@@ -20,15 +20,16 @@ namespace SqlGenerator.DomainServices
 				var dt = con.GetSchema("Tables");
 				foreach (DataRow row in dt.Rows)
 				{
-					var datebase = row[0].ToString();
+					var database = row[0].ToString();
 					var schema = row[1].ToString();
 					var name = row[2].ToString();
 					var type = row[3].ToString();
-					Debug.WriteLine("{0}, {1}, {2}, {3}", datebase, schema, name, type);
+					Debug.WriteLine("{0}, {1}, {2}, {3}", database, schema, name, type);
 
 					if (type == "BASE TABLE" && name != "sysdiagrams")
 					{
-						tables.Add(row[2].ToString());
+						var tableSpecifier = schema == "dbo" ? name : string.Format("{0}.{1}", schema, name);
+						tables.Add(tableSpecifier);
 					}
 				}
 				return tables.OrderBy(t => t).ToList();
@@ -44,7 +45,7 @@ namespace SqlGenerator.DomainServices
 				{
 					cmd.Connection = con;
 					cmd.CommandType = CommandType.Text;
-					cmd.CommandText = string.Format("SELECT * FROM [{0}]", tableName);
+					cmd.CommandText = string.Format("SELECT * FROM {0}", tableName);
 					cmd.CommandTimeout = 60;
 
 					using (var dr = cmd.ExecuteReader(CommandBehavior.KeyInfo))

@@ -307,6 +307,31 @@ namespace SqlGenerator
 			btnCopy.Enabled = txtResult.Text.IsSpecified();
 		}
 
+		private void LoadConnections()
+		{
+			var connections = new List<ConnectionItem>();
+			foreach (ConnectionStringSettings c in ConfigurationManager.ConnectionStrings)
+			{
+				if (c.Name == "LocalSqlServer")
+					continue;
+				var builder = new SqlConnectionStringBuilder(c.ConnectionString);
+				connections.Add(new ConnectionItem
+				{
+					Name = string.Format("{0}   (Server={1}; Database={2})", c.Name, builder.DataSource, builder.InitialCatalog),
+					ConnectionString = c.ConnectionString
+				});
+			}
+
+			cboConnection.DisplayMember = "Name";
+			cboConnection.ValueMember = "ConnectionString";
+			cboConnection.DataSource = connections;
+		}
+
+		private void LoadTables()
+		{
+			cboTableName.DataSource = SqlParser.GetTables(cboConnection.SelectedValue.ToString());
+		}
+
 		private void GetSettings()
 		{
 			_isLoading = true;
@@ -314,8 +339,10 @@ namespace SqlGenerator
 
 			FileType = Settings.Default.FileType.ToEnum<FileType>();
 			txtFilePath.Text = Settings.Default.FilePath;
+			LoadSheetNames();
 			Delimiter = Settings.Default.Delimiter.ToEnum<DelimiterType>();
 			cboSheetName.Text = Settings.Default.SheetName;
+			LoadConnections();
 			cboConnection.SelectedValue = Settings.Default.ConnectionString;
 			cboTableName.Text = Settings.Default.TableName;
 
@@ -334,31 +361,6 @@ namespace SqlGenerator
 
 			lblResultCount.Text = string.Empty;
 			lblVersion.Text = string.Format("Version: {0}  ({1})  {2}", AssemblyExtender.DisplayVersion(), AssemblyExtender.BuildDate().ToShortDateString(), AssemblyExtender.AssemblyCompany());
-		}
-
-		private void LoadConnections()
-		{
-			var connections = new List<ConnectionItem>();
-			foreach (ConnectionStringSettings c in ConfigurationManager.ConnectionStrings)
-			{
-				if (c.Name == "LocalSqlServer")
-					continue;
-				var builder = new SqlConnectionStringBuilder(c.ConnectionString);
-				connections.Add(new ConnectionItem
-				{
-					Name = string.Format("Server={0}; Database={1}", builder.DataSource, builder.InitialCatalog),
-					ConnectionString = c.ConnectionString
-				});
-			}
-
-			cboConnection.DisplayMember = "Name";
-			cboConnection.ValueMember = "ConnectionString";
-			cboConnection.DataSource = connections;
-		}
-
-		private void LoadTables()
-		{
-			cboTableName.DataSource = SqlParser.GetTables(cboConnection.SelectedValue.ToString());
 		}
 
 		private void SaveSettings()

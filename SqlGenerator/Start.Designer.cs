@@ -35,6 +35,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Start));
 			this.txtFilePath = new System.Windows.Forms.TextBox();
 			this.lblFilePath = new System.Windows.Forms.Label();
 			this.txtResult = new ICSharpCode.TextEditor.TextEditorControl();
@@ -417,6 +418,7 @@
 			this.Controls.Add(this.lblVersion);
 			this.Controls.Add(this.lblResultCount);
 			this.Controls.Add(this.btnCopy);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(837, 646);
 			this.Name = "Start";
 			this.Text = "Generate SQL statements from values in file";
