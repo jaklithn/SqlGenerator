@@ -107,6 +107,7 @@
     <Compile Include="Entities\SqlColumn.cs" />
     <Compile Include="Entities\SqlColumnValue.cs" />
     <Compile Include="Extenders\AssemblyExtender.cs" />
+    <Compile Include="Extenders\EnumerableExtender.cs" />
     <Compile Include="Extenders\EnumExtender.cs" />
     <Compile Include="Extenders\ObjectExtender.cs" />
     <Compile Include="Extenders\StringExtender.cs" />

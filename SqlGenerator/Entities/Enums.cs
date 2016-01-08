@@ -9,10 +9,11 @@
 			Delete,
 		}
 
-		public enum FileType
+		public enum SourceType
 		{
 			Excel,
 			Text,
+            Sql
 		}
 
 		public enum DelimiterType
