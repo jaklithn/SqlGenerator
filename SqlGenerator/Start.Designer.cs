@@ -84,7 +84,7 @@
             this.txtFilePath.Location = new System.Drawing.Point(182, 19);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.ReadOnly = true;
-            this.txtFilePath.Size = new System.Drawing.Size(523, 20);
+            this.txtFilePath.Size = new System.Drawing.Size(361, 20);
             this.txtFilePath.TabIndex = 3;
             this.txtFilePath.Text = "C:\\Temp\\MyExcelFile.xlsx";
             this.txtFilePath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
@@ -120,16 +120,16 @@
             this.cboSheetName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSheetName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSheetName.FormattingEnabled = true;
-            this.cboSheetName.Location = new System.Drawing.Point(804, 19);
+            this.cboSheetName.Location = new System.Drawing.Point(645, 19);
             this.cboSheetName.Name = "cboSheetName";
-            this.cboSheetName.Size = new System.Drawing.Size(158, 21);
+            this.cboSheetName.Size = new System.Drawing.Size(223, 21);
             this.cboSheetName.TabIndex = 5;
             // 
             // lblSheetName
             // 
             this.lblSheetName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSheetName.AutoSize = true;
-            this.lblSheetName.Location = new System.Drawing.Point(760, 22);
+            this.lblSheetName.Location = new System.Drawing.Point(601, 22);
             this.lblSheetName.Name = "lblSheetName";
             this.lblSheetName.Size = new System.Drawing.Size(38, 13);
             this.lblSheetName.TabIndex = 8;
@@ -139,7 +139,7 @@
             // btnSearchFile
             // 
             this.btnSearchFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchFile.Location = new System.Drawing.Point(711, 17);
+            this.btnSearchFile.Location = new System.Drawing.Point(549, 18);
             this.btnSearchFile.Name = "btnSearchFile";
             this.btnSearchFile.Size = new System.Drawing.Size(30, 23);
             this.btnSearchFile.TabIndex = 4;
@@ -216,9 +216,9 @@
             "Semicolon",
             "Comma",
             "Tab"});
-            this.cboDelimiter.Location = new System.Drawing.Point(804, 19);
+            this.cboDelimiter.Location = new System.Drawing.Point(645, 19);
             this.cboDelimiter.Name = "cboDelimiter";
-            this.cboDelimiter.Size = new System.Drawing.Size(158, 21);
+            this.cboDelimiter.Size = new System.Drawing.Size(223, 21);
             this.cboDelimiter.TabIndex = 5;
             this.cboDelimiter.Visible = false;
             // 
@@ -226,7 +226,7 @@
             // 
             this.lblDelimiter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDelimiter.AutoSize = true;
-            this.lblDelimiter.Location = new System.Drawing.Point(748, 22);
+            this.lblDelimiter.Location = new System.Drawing.Point(589, 22);
             this.lblDelimiter.Name = "lblDelimiter";
             this.lblDelimiter.Size = new System.Drawing.Size(50, 13);
             this.lblDelimiter.TabIndex = 20;
@@ -289,11 +289,12 @@
             // 
             this.cboTableNameTarget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTableNameTarget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTableNameTarget.DropDownWidth = 223;
             this.cboTableNameTarget.FormattingEnabled = true;
-            this.cboTableNameTarget.Location = new System.Drawing.Point(804, 19);
+            this.cboTableNameTarget.Location = new System.Drawing.Point(645, 19);
             this.cboTableNameTarget.MaxDropDownItems = 50;
             this.cboTableNameTarget.Name = "cboTableNameTarget";
-            this.cboTableNameTarget.Size = new System.Drawing.Size(158, 21);
+            this.cboTableNameTarget.Size = new System.Drawing.Size(223, 21);
             this.cboTableNameTarget.TabIndex = 21;
             // 
             // cboConnectionTarget
@@ -308,7 +309,7 @@
             "Tab"});
             this.cboConnectionTarget.Location = new System.Drawing.Point(182, 19);
             this.cboConnectionTarget.Name = "cboConnectionTarget";
-            this.cboConnectionTarget.Size = new System.Drawing.Size(523, 21);
+            this.cboConnectionTarget.Size = new System.Drawing.Size(361, 21);
             this.cboConnectionTarget.TabIndex = 21;
             this.cboConnectionTarget.SelectedIndexChanged += new System.EventHandler(this.cboConnectionTarget_SelectedIndexChanged);
             // 
@@ -316,7 +317,7 @@
             // 
             this.lblTableNameTarget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTableNameTarget.AutoSize = true;
-            this.lblTableNameTarget.Location = new System.Drawing.Point(733, 22);
+            this.lblTableNameTarget.Location = new System.Drawing.Point(574, 22);
             this.lblTableNameTarget.Name = "lblTableNameTarget";
             this.lblTableNameTarget.Size = new System.Drawing.Size(65, 13);
             this.lblTableNameTarget.TabIndex = 23;
@@ -407,7 +408,7 @@
             // 
             this.lblFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(975, 68);
+            this.lblFilter.Location = new System.Drawing.Point(881, 69);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(32, 13);
             this.lblFilter.TabIndex = 30;
@@ -417,9 +418,9 @@
             // txtFilter
             // 
             this.txtFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFilter.Location = new System.Drawing.Point(1011, 65);
+            this.txtFilter.Location = new System.Drawing.Point(917, 66);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(177, 20);
+            this.txtFilter.Size = new System.Drawing.Size(271, 20);
             this.txtFilter.TabIndex = 29;
             // 
             // optSQL
@@ -437,11 +438,12 @@
             // 
             this.cboTableNameSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTableNameSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTableNameSource.DropDownWidth = 223;
             this.cboTableNameSource.FormattingEnabled = true;
-            this.cboTableNameSource.Location = new System.Drawing.Point(804, 65);
+            this.cboTableNameSource.Location = new System.Drawing.Point(645, 65);
             this.cboTableNameSource.MaxDropDownItems = 50;
             this.cboTableNameSource.Name = "cboTableNameSource";
-            this.cboTableNameSource.Size = new System.Drawing.Size(158, 21);
+            this.cboTableNameSource.Size = new System.Drawing.Size(223, 21);
             this.cboTableNameSource.TabIndex = 24;
             // 
             // cboConnectionSource
@@ -456,7 +458,7 @@
             "Tab"});
             this.cboConnectionSource.Location = new System.Drawing.Point(182, 65);
             this.cboConnectionSource.Name = "cboConnectionSource";
-            this.cboConnectionSource.Size = new System.Drawing.Size(523, 21);
+            this.cboConnectionSource.Size = new System.Drawing.Size(361, 21);
             this.cboConnectionSource.TabIndex = 25;
             this.cboConnectionSource.SelectedIndexChanged += new System.EventHandler(this.cboConnectionSource_SelectedIndexChanged);
             // 
@@ -464,7 +466,7 @@
             // 
             this.lblTableNameSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTableNameSource.AutoSize = true;
-            this.lblTableNameSource.Location = new System.Drawing.Point(733, 68);
+            this.lblTableNameSource.Location = new System.Drawing.Point(574, 68);
             this.lblTableNameSource.Name = "lblTableNameSource";
             this.lblTableNameSource.Size = new System.Drawing.Size(65, 13);
             this.lblTableNameSource.TabIndex = 27;
