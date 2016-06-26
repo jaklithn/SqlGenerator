@@ -94,6 +94,7 @@
     <Compile Include="Controls\ColumnMap.Designer.cs">
       <DependentUpon>ColumnMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DomainServices\SettingsHandler.cs" />
     <Compile Include="DomainServices\SqlParser.cs" />
     <Compile Include="DomainServices\AppSyntaxModeProvider.cs" />
     <Compile Include="DomainServices\ExcelParser2.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="DomainServices\ResultCreator.cs" />
     <Compile Include="Entities\Enums.cs" />
     <Compile Include="Entities\FileRow.cs" />
+    <Compile Include="Entities\Settings.cs" />
     <Compile Include="Entities\SqlColumn.cs" />
     <Compile Include="Entities\SqlColumnValue.cs" />
     <Compile Include="Extenders\AssemblyExtender.cs" />
@@ -111,15 +113,16 @@
     <Compile Include="Extenders\EnumExtender.cs" />
     <Compile Include="Extenders\ObjectExtender.cs" />
     <Compile Include="Extenders\StringExtender.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Start.cs">
+    <Compile Include="Forms\Connection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Start.Designer.cs">
+    <Compile Include="Forms\Connection.Designer.cs">
+      <DependentUpon>Connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -127,7 +130,10 @@
     <EmbeddedResource Include="Controls\ColumnMap.resx">
       <DependentUpon>ColumnMap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Start.resx">
+    <EmbeddedResource Include="Forms\Connection.resx">
+      <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -147,10 +153,7 @@
     <EmbeddedResource Include="Resources\SQL-Mode.xshd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
+    <None Include="Properties\DataSources\SqlGenerator.Entities.ConnectionItem.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -46,13 +46,13 @@ namespace SqlGenerator.Entities
 					case "nvarchar":
 					case "nchar":
 					case "ntext":
-						return string.Format("{0}({1})", DataTypeName, ColumnSize);
+						return $"{DataTypeName}({ColumnSize})";
 
 					case "real":
 					case "float":
 					case "numeric":
 					case "decimal":
-						return string.Format("{0}[{1},{2}]", DataTypeName, NumericPrecision, NumericScale);
+						return $"{DataTypeName}[{NumericPrecision},{NumericScale}]";
 
 					default:
 						return DataTypeName;
@@ -71,12 +71,12 @@ namespace SqlGenerator.Entities
 				case "varchar":
 				case "char":
 				case "text":
-					return string.Format("'{0}'", value.ToString().Replace("'", "''"));
+					return $"'{value.ToString().Replace("'", "''")}'";
 
 				case "nvarchar":
 				case "nchar":
 				case "ntext":
-					return string.Format("N'{0}'", value.ToString().Replace("'", "''"));
+					return $"N'{value.ToString().Replace("'", "''")}'";
 
 				case "money":
 				case "smallmoney":
@@ -85,12 +85,12 @@ namespace SqlGenerator.Entities
 				case "float":
 				case "real":
 					var strValueF = FormatDecimal(value);
-					return string.Format("CAST({0} AS Float({1})", strValueF, NumericPrecision);
+					return $"CAST({strValueF} AS Float({NumericPrecision})";
 
 				case "numeric":
 				case "decimal":
 					var strValueD = FormatDecimal(value);
-					return string.Format("CAST({0} AS Decimal({1}, {2}))", strValueD, NumericPrecision, NumericScale);
+					return $"CAST({strValueD} AS Decimal({NumericPrecision}, {NumericScale}))";
 
 				case "datetime":
 					DateTime datValue;
@@ -100,7 +100,7 @@ namespace SqlGenerator.Entities
 						var decValue = GetDouble(value);
 						datValue = DateTime.FromOADate(decValue);
 					}
-					return string.Format("'{0}'", datValue.ToString("yyyy-MM-dd HH:mm:ss"));
+					return $"'{datValue.ToString("yyyy-MM-dd HH:mm:ss")}'";
 
 				default:
 					return value.ToString();
@@ -139,7 +139,7 @@ namespace SqlGenerator.Entities
 			}
 			catch (Exception)
 			{
-				throw new ArgumentException(string.Format("Failed to parse the following value: {0}", strValue));
+				throw new ArgumentException($"Failed to parse the following value: {strValue}");
 			}
 		}
 	}

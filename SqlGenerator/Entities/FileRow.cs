@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+
 namespace SqlGenerator.Entities
 {
 	public class FileRow
@@ -8,7 +9,7 @@ namespace SqlGenerator.Entities
 
 		public FileRow()
 		{
-			Values=new List<object>();
+			Values = new List<object>();
 		}
 	}
 }

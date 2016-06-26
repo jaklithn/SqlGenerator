@@ -3,9 +3,9 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("SqlGenerator")]
 [assembly: AssemblyProduct("SqlGenerator")]
-[assembly: AssemblyDescription("Generate SQL statements from input file")]
+[assembly: AssemblyDescription("Generate SQL statements from common input sources")]
 [assembly: AssemblyCompany("Jakob Lithner")]
-[assembly: AssemblyCopyright("Created by Jakob Lithner 2013-2015, Open Source")]
+[assembly: AssemblyCopyright("Created by Jakob Lithner 2013-2016, Open Source")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -14,12 +14,13 @@ using System.Runtime.InteropServices;
 
 // Version: Major.Minor.Build.Revision
 // Note:    Build and Revision must be automatically generated to make the BuildDate property work!
-[assembly: AssemblyVersion("1.5.*")]
-[assembly: AssemblyFileVersion("1.5.0.0")]
+[assembly: AssemblyVersion("1.6.*")]
+[assembly: AssemblyFileVersion("1.6.0.0")]
 
 
 // File versions
 // ========================================================================================================
+// 1.6		Allow connections to be edited in application.
 // 1.5		Parse table schema from SQL Server and create a mapping scenario.
 // 1.4		Remove settings file.
 // 1.3		Correct parsing of decimal values.
