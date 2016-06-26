@@ -12,11 +12,11 @@ This is what it looks like when you run the application.
 ![SqlGenerator demo](Demo.png)
 
 ## Features
-* Input file can be either Excel or text file
+* Input file can be Excel file, text file or other SQL source
 * Sheet names are automatically detected from Excel file
 * You can select typical delimeters for text file: comma, tab, semicolon
 * You can choose to regard first line as column headers if appropriate
-* You can add any number of connection strings to config file
+* You can enter any number of connection strings in the application or directly in the settings file
 * Connections are displayed with server and database names, hiding the sensitive login information
 * Table names are automatically detected from database
 * Detailed column information is automatically detected from selected table: name, datatype, size, key, null
@@ -33,7 +33,7 @@ This is what it looks like when you run the application.
 * Download repository
 * Compile the code
 * Transfer files from bin/Release directory into any directory of your choice
-* Enter all connections strings into the config file
+* Enter required connections strings in the generated settings file or in the application
 * Execute
 
 
