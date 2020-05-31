@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.IO;
-using Excel;
 using SqlGenerator.Entities;
-
+using ExcelDataReader;
 
 namespace SqlGenerator.DomainServices
 {
@@ -25,10 +24,21 @@ namespace SqlGenerator.DomainServices
 			{
 				using (var excelReader = GetExcelDataReader(path, stream))
 				{
-					excelReader.IsFirstRowAsColumnNames = true;
-					var dataset = excelReader.AsDataSet();
+					//Upgrading from ExcelDataReader 2.x
+					//Method AsDataSet & property IsFirstRowAsColumnNames
+					//https://github.com/ExcelDataReader/ExcelDataReader#important-note-when-upgrading-from-exceldatareader-2x
+					
+					var dataset = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+					{
+						ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+						{
+							UseHeaderRow = true 
+						}
+					});
+
 					var names = from DataTable table in dataset.Tables
 								select table.TableName;
+
 					return names.ToList();
 				}
 			}
@@ -44,8 +54,20 @@ namespace SqlGenerator.DomainServices
 			{
 				using (var excelReader = GetExcelDataReader(path, stream))
 				{
-					excelReader.IsFirstRowAsColumnNames = skipFirstLine;
-					var dataset = excelReader.AsDataSet();
+
+					//Upgrading from ExcelDataReader 2.x
+					//Method AsDataSet & property IsFirstRowAsColumnNames
+					//https://github.com/ExcelDataReader/ExcelDataReader#important-note-when-upgrading-from-exceldatareader-2x
+
+					var dataset = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+					{
+						ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+						{
+							UseHeaderRow = skipFirstLine
+						}
+					});
+
+
 					foreach (DataRow row in dataset.Tables[sheetName].Rows)
 					{
 						var rowItem = new FileRow();
