@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SqlGenerator.Extenders
 {
@@ -18,15 +20,20 @@ namespace SqlGenerator.Extenders
 			return string.IsNullOrEmpty(value);
 		}
 
-		public static bool IsSpecified(this string value)
-		{
-			return !string.IsNullOrEmpty(value);
-		}
+        public static bool IsSpecified(this string value)
+        {
+            return !string.IsNullOrEmpty(value);
+        }
 
-		/// <summary>
-		/// Parse string into specified enum type and make sure it matches a valid enum value.
-		/// </summary>
-		public static T ToEnum<T>(this string value)
+        public static bool ContainsAny(this string value, IEnumerable<string> checkedValues)
+        {
+            return checkedValues.Any(value.Contains);
+        }
+
+	    /// <summary>
+        /// Parse string into specified enum type and make sure it matches a valid enum value.
+        /// </summary>
+        public static T ToEnum<T>(this string value)
 		{
 			if (!Enum.IsDefined(typeof(T), value))
 				throw new Exception(string.Format("String value='{0}' can not be interpreted as valid enum of type {1}", value, typeof(T).Name));

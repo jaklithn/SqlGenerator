@@ -14,12 +14,13 @@ using System.Runtime.InteropServices;
 
 // Version: Major.Minor.Build.Revision
 // Note:    Build and Revision must be automatically generated to make the BuildDate property work!
-[assembly: AssemblyVersion("1.7.*")]
-[assembly: AssemblyFileVersion("1.7.0.0")]
+[assembly: AssemblyVersion("1.8.*")]
+[assembly: AssemblyFileVersion("1.8.0.0")]
 
 
 // File versions
 // ========================================================================================================
+// 1.8		Ensure valid table order for inserted statements
 // 1.7		Update nuget component ExcelDataReader (fix v2.x to 3.6.0) and add ExcelDataReader.Dataset. Update to .NET 4.8
 // 1.6		Allow connections to be edited in application.
 // 1.5		Parse table schema from SQL Server and create a mapping scenario.

@@ -15,20 +15,17 @@ namespace SqlGenerator.Controls
 
 		public event EventHandler IsModified;
 
-		private string StaticInput { get { return txtStaticInput.Text.Trim(); } }
-		public int FileColumnIndex { get { return (int)cboFileColumn.SelectedValue; } }
+		private string StaticInput => txtStaticInput.Text.Trim();
+	    public int FileColumnIndex => (int)cboFileColumn.SelectedValue;
 
-		public SqlColumn SqlColumn { get; private set; }
-		public bool IsMapped { get { return (int)cboFileColumn.SelectedValue != NoMapping; } }
-		public bool IsValid { get { return (int)cboFileColumn.SelectedValue != StaticData || StaticInput.IsSpecified(); } }
-
-		public string ValueMarker
-		{
-			get { return StaticInput.IsSpecified() ? SqlColumn.CreateValueString(StaticInput) : string.Format("{{{0}}}", FileColumnIndex); }
-		}
+	    public SqlColumn SqlColumn { get; private set; }
+		public bool IsMapped => (int)cboFileColumn.SelectedValue != NoMapping;
+	    public bool IsValid => (int)cboFileColumn.SelectedValue != StaticData || StaticInput.IsSpecified();
+        public string ValueMarker => StaticInput.IsSpecified() ? SqlColumn.CreateValueString(StaticInput) : $"{{{FileColumnIndex}}}";
 
 
-		public ColumnMap(SqlColumn sqlColumn, ICollection<FileColumn> fileColumns)
+
+	    public ColumnMap(SqlColumn sqlColumn, ICollection<FileColumn> fileColumns)
 		{
 			InitializeComponent();
 

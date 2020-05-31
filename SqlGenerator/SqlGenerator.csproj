@@ -93,6 +93,7 @@
     <Compile Include="DomainServices\ExcelParser.cs" />
     <Compile Include="DomainServices\ResultCreator.cs" />
     <Compile Include="Entities\Enums.cs" />
+    <Compile Include="Entities\TableDependency.cs" />
     <Compile Include="Entities\FileRow.cs" />
     <Compile Include="Entities\Settings.cs" />
     <Compile Include="Entities\SqlColumn.cs" />

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,7 +38,7 @@ namespace SqlGenerator.DomainServices
             switch (commandType)
             {
                 case CommandType.Insert:
-                    var columnNames = columnMaps.Select(c => string.Format("[{0}]", c.SqlColumn.ColumnName)).ToList();
+                    var columnNames = columnMaps.Select(c => $"[{c.SqlColumn.ColumnName}]").ToList();
                     var valueMarkers = columnMaps.Select(c => c.ValueMarker).ToList();
                     return string.Format("INSERT INTO {0} ({1}) VALUES ({2})", GetTable(tableName), string.Join(", ", columnNames), string.Join(", ", valueMarkers));
 
@@ -57,7 +57,7 @@ namespace SqlGenerator.DomainServices
         private static string GetTable(string tableName)
         {
             var sections = tableName.Split(".[]".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-            return string.Join(".", sections.Select(s => string.Format("[{0}]", s)));
+            return string.Join(".", sections.Select(s => $"[{s}]"));
         }
 
         private static List<object> AdjustedValues(List<ColumnMap> columnMaps, IReadOnlyList<object> values)
@@ -75,7 +75,7 @@ namespace SqlGenerator.DomainServices
 
         private static IEnumerable<string> GetPairs(IEnumerable<ColumnMap> columnMaps)
         {
-            return columnMaps.Select(columnMap => string.Format("[{0}]={1}", columnMap.SqlColumn.ColumnName, columnMap.ValueMarker)).ToList();
+            return columnMaps.Select(columnMap => $"[{columnMap.SqlColumn.ColumnName}]={columnMap.ValueMarker}").ToList();
         }
 
         private static bool IsEmpty(FileRow fileRow)
