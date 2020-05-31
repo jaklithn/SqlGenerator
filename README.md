@@ -26,6 +26,7 @@ This is what it looks like when you run the application.
 * Data types are automatically parsed and formatted to valid SQL syntax
 * SQL commands can be either: INSERT, UPDATE or DELETE
 * Key fields are handled and formed into WHERE clauses as appropriate for UPDATE and DELETE commands
+* Generated SQL commands are sorted in relevant order according to table dependencies
 * Generated SQL commands are color coded to make result more readable
 
 ## Installation
